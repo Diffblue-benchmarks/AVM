@@ -321,11 +321,9 @@ public class ABICompilerClassVisitor extends ClassVisitor {
             methodVisitor.visitInsn(ARETURN);
         }
 
-        Label lastLabel = new Label();
-        methodVisitor.visitLabel(lastLabel);
-        methodVisitor.visitLocalVariable("decoder", "Lorg/aion/avm/userlib/abi/ABIDecoder;", null, label1, lastLabel, 0);
-        methodVisitor.visitLocalVariable("methodName", "Ljava/lang/String;", null, label2, lastLabel, 1);
-        methodVisitor.visitMaxs(2, 3);
+        methodVisitor.visitLocalVariable("decoder", "Lorg/aion/avm/userlib/abi/ABIDecoder;", null, label1, latestLabel, 0);
+        methodVisitor.visitLocalVariable("methodName", "Ljava/lang/String;", null, label1, label2, 1);
+        methodVisitor.visitMaxs(0, 0);
         methodVisitor.visitEnd();
     }
 
